@@ -1,0 +1,27 @@
+class Edificio:
+    def __init__(self, altura, pisos):
+        self.altura = altura
+        self.pisos = pisos
+
+    def descripcion(self):
+        return f"Edificio de {self.altura} metros de altura y {self.pisos} pisos."
+
+
+class Auto:
+    def __init__(self, marca, modelo, year):
+        self.marca = marca
+        self.modelo = modelo
+        self.year = year
+
+    def descripcion(self):
+        return f"Auto {self.marca} {self.modelo} del año {self.year}."
+
+
+class Bicicleta:
+    def __init__(self, marca, modelo, size):
+        self.marca = marca
+        self.modelo = modelo
+        self.size = size
+
+    def descripcion(self):
+        return f"Bicicleta {self.marca} {self.modelo} del tamaño {self.size}."
