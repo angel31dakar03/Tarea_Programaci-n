@@ -1,0 +1,35 @@
+class ImpactoEcologico:
+    def __init__(self, valor):
+        self.valor = valor
+
+    def obtenerImpactoEcologico(self):
+        return self.valor
+class Edificio(ImpactoEcologico):
+    # ...
+
+class Auto(ImpactoEcologico):
+    # ...
+
+class Bicicleta(ImpactoEcologico):
+    # ...
+edificio = Edificio(100, 20, ImpactoEcologico(50))
+auto = Auto("Toyota", "Corolla", 2022, ImpactoEcologico(20))
+bicicleta = Bicicleta("Trek", "Domane AL 2", 28, ImpactoEcologico(5))
+
+objetos = [edificio, auto, bicicleta]
+impacto_total = ImpactoEcologico(0)
+
+for obj in objetos:
+    print(f"Objeto: {obj.descripcion()}")
+    print(f"Impacto ecológico: {obj.obtenerImpactoEcologico()}")
+    impacto_total.valor += obj.obtenerImpactoEcologico()
+
+print(f"El impacto ecológico total es {impacto_total.valor}.")
+#Este código a impreso lo que viene a continuación
+#Objeto: Edificio de 100 metros de altura y 20 pisos.
+#Impacto ecológico: 50
+#Objeto: Toyota Corolla 2022.
+#Impacto ecológico: 20
+#Objeto: Trek Domane AL 2 28.
+#Impacto ecológico: 5
+#El impacto ecológico total es 95.
