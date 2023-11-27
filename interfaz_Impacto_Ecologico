@@ -1,0 +1,33 @@
+class ImpactoEcologico:
+    def __init__(self, valor):
+        self.valor = valor
+
+    def obtenerImpactoEcologico(self):
+        return self.valor
+class Edificio:
+    def __init__(self, altura, pisos, impacto_ecologico):
+        self.altura = altura
+        self.pisos = pisos
+        self.impacto_ecologico = impacto_ecologico
+
+    def descripcion(self):
+        return f"Edificio de {self.altura} metros de altura y {self.pisos} pisos."
+
+    def obtenerImpactoEcologico(self):
+        return self.impacto_ecologico.obtenerImpactoEcologico()
+
+# Modificar también las clases Auto y Bicicleta de manera similar.
+# Ejemplo
+impacto_total = ImpactoEcologico(0)
+
+edificio = Edificio(100, 20, ImpactoEcologico(50))
+impacto_total.valor += edificio.obtenerImpactoEcologico()
+
+auto = Auto("Toyota", "Corolla", 2022, ImpactoEcologico(20))
+impacto_total.valor += auto.obtenerImpactoEcologico()
+
+bicicleta = Bicicleta("Trek", "Domane AL 2", 28, ImpactoEcologico(5))
+impacto_total.valor += bicicleta.obtenerImpactoEcologico()
+
+print(f"El impacto ecológico total es {impacto_total.valor}.")
+#El impacto ecológico total es 95.
