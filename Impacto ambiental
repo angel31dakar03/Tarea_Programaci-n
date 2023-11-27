@@ -1,0 +1,20 @@
+# Calcular el impacto ecológico del carbono
+def carbon_impact(co2_emissions):
+    # Convertir emisiones de CO2 a toneladas por año
+    tonnes_co2 = co2_emissions * 1000 / 365
+
+    # Convertir emisiones de CO2 a metros cúbicos de dióxido de carbono (m³ CO2)
+    co2_m3 = tonnes_co2 / 0.044
+
+    # Convertir emisiones de CO2 a hectáreas (ha)
+    co2_ha = co2_m3 / 1000
+
+    # Calcular el impacto ecológico del carbono
+    ecological_impact = {
+        'co2_emissions': co2_emissions,
+        'tonnes_co2': tonnes_co2,
+        'co2_m3': co2_m3,
+        'co2_ha': co2_ha
+    }
+
+    return ecological_impact
